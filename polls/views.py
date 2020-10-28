@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 # Create your views here.
 
 from django.http import HttpResponse
+from django.shortcuts import render
+
 from .models import Person
 
 def test(request):
@@ -21,3 +23,7 @@ def home(request):
     response_html = '<br>'.join(boards_names)
 
     return HttpResponse(response_html)
+
+def homehtml(request):
+    boards = Person.objects.all()
+    return render(request, 'home.html', {'boards': boards})

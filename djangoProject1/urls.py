@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^$', views.test),
     url(r'test', views.test),
     url(r'home', views.home),
+    url(r'pagehome', views.homehtml),
 
     url(r'^admin/', admin.site.urls),
 ]
