@@ -15,7 +15,7 @@ Including another URLconf
 """
 from sys import path
 
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
 
 from polls import views
@@ -23,6 +23,7 @@ from polls import views
 urlpatterns = [
     url(r'^$', views.test),
     url(r'test', views.test),
-    # path('polls/', include('polls.views')),
+    url(r'home', views.home),
+
     url(r'^admin/', admin.site.urls),
 ]
